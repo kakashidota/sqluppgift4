@@ -99,8 +99,8 @@ FROM Products;
 CREATE PROCEDURE GetActiveOrderCustomers
 AS
 BEGIN
-    SELECT DISTINCT c.CustomerID, c.CustomerName
+    SELECT c.CustomerID, c.CustomerName
     FROM Customers c
     INNER JOIN Orders o ON c.CustomerID = o.CustomerID
-    WHERE o.Status = 'Active'
+    WHERE o.Status = 'Delivered'
 END
